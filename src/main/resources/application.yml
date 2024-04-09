@@ -1,0 +1,40 @@
+file:
+  location: D:/demo/static/ #?????????????
+
+server:
+  port: 8181
+  tomcat:
+    max-http-form-post-size: 9000000
+    uri-encoding: utf-8
+    max-connections: 3000
+spring:
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 100MB
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/thesis
+    username: root
+    password: wzx2003
+#mybatis-plus
+mybatis-plus:
+  #实体扫描，多个package用逗号或者分号分隔
+  type-aliases-package: com.instuid.entity
+  #主键类型  0:"数据库ID自增", 1:"用户输入ID",2:"全局唯一ID (数字类型唯一ID)", 3:"全局唯一ID UUID";
+  global-config:
+    id-type: 0
+    #驼峰下划线转换
+    db-column-underline: true
+    #刷新mapper 调试神器
+    refresh-mapper: true
+
+  #输出sql日志
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+
+
+
+
